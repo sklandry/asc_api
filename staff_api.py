@@ -52,8 +52,8 @@ def scrape_staff():
                 for staff in staff_members:
                     # Extract the image src and alt text (if available)
                     img_tag = staff.find("img")
-                    img_src = img_tag["src"] if img_tag else "No image"
-                    img_alt = img_tag["alt"] if img_tag else "No alt text"
+                    img_src = img_tag["data-src"] if img_tag else ""
+                    img_alt = img_tag["alt"] if img_tag else ""
 
                     # Extract the caption (name, title, and email)
                     figcaption = staff.find("figcaption")
